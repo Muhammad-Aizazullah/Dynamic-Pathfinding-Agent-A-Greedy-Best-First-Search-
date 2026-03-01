@@ -101,3 +101,12 @@ def reconstruct_path(came_from, current, draw):
         cost += 1
         draw()
     return cost
+if DYNAMIC_MODE and random.random() < 0.02:
+    r = random.randint(0, ROWS-1)
+    c = random.randint(0, ROWS-1)
+    node = grid[r][c]
+    if node != start and node not in ends:
+        node.make_barrier()
+        for row in grid:
+            for n in row:
+                n.update_neighbors(grid)
