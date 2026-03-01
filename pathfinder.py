@@ -110,3 +110,14 @@ if DYNAMIC_MODE and random.random() < 0.02:
         for row in grid:
             for n in row:
                 n.update_neighbors(grid)
+if event.key == pygame.K_r:
+    for row in grid:
+        for node in row:
+            if random.random() < 0.3:
+                node.make_barrier()
+
+if event.key == pygame.K_c:
+    MODE = None
+    start = None
+    ends = []
+    grid = make_grid(ROWS, width)
