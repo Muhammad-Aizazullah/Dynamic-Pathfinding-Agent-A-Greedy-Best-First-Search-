@@ -77,3 +77,18 @@ elif pygame.mouse.get_pressed()[2]:
     if node in ends:
         ends.remove(node)
     node.reset()
+
+if event.key == pygame.K_1:
+    ALGO = "A*"
+    print("Algorithm: A*")
+
+if event.key == pygame.K_2:
+    ALGO = "GBFS"
+    print("Algorithm: Greedy Best First")
+
+if event.key == pygame.K_SPACE and start and len(ends) > 0:
+    MODE = None
+    for row in grid:
+        for node in row:
+            node.update_neighbors(grid)
+    algorithm(lambda: draw(win, grid, ROWS, width), grid, start, ends)
