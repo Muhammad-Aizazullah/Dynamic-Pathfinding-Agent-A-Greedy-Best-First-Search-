@@ -64,3 +64,16 @@ elif MODE == "GOAL":
         node.make_end()
         ends.append(node)
     MODE = None
+
+else:
+    if node != start and node not in ends:
+        node.make_barrier()
+
+elif pygame.mouse.get_pressed()[2]:
+    row, col = get_clicked_pos(pygame.mouse.get_pos(), ROWS, width)
+    node = grid[row][col]
+    if node == start:
+        start = None
+    if node in ends:
+        ends.remove(node)
+    node.reset()
