@@ -53,3 +53,14 @@ class Node:
     def make_end(self):
         self.color = RED
         self.label = "G"
+if MODE == "START":
+    if start is None and node not in ends:
+        start = node
+        start.make_start()
+    MODE = None
+
+elif MODE == "GOAL":
+    if node != start and node not in ends:
+        node.make_end()
+        ends.append(node)
+    MODE = None
