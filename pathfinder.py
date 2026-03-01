@@ -92,3 +92,12 @@ if event.key == pygame.K_SPACE and start and len(ends) > 0:
         for node in row:
             node.update_neighbors(grid)
     algorithm(lambda: draw(win, grid, ROWS, width), grid, start, ends)
+
+def reconstruct_path(came_from, current, draw):
+    cost = 0
+    while current in came_from:
+        current = came_from[current]
+        current.make_path()
+        cost += 1
+        draw()
+    return cost
