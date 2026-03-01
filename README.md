@@ -54,9 +54,8 @@ python dynamic_pathfinding.py
 
 # 📸 **Screenshots Plan**
 
-1. **Best Case**  
-   - Open grid, few obstacles, agent finds goal quickly.  
-   - Save screenshot as `best_case.png`.
+### Best Case
+![Best Case](https://github.com/Muhammad-Aizazullah/Dynamic-Pathfinding-Agent-A-Greedy-Best-First-Search-/blob/main/Best%20Case.png?raw=true)
 
 2. **Worst Case**  
    - Dense obstacles, agent has to explore almost entire grid.  
